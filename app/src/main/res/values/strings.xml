@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">TestAndroidViaRN</string>
+    <string name="i_am_origin">我是原生的 Button</string>
 </resources>

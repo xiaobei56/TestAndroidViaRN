@@ -13,5 +13,14 @@
     "core-js": "^3.0.1",
     "react": "^16.8.6",
     "react-native": "^0.59.5"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xiaobei56/TestAndroidViaRN.git"
+  },
+  "bugs": {
+    "url": "https://github.com/xiaobei56/TestAndroidViaRN/issues"
+  },
+  "homepage": "https://github.com/xiaobei56/TestAndroidViaRN#readme"
 }

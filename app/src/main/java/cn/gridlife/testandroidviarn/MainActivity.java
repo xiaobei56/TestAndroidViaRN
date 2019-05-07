@@ -6,6 +6,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
+import cn.gridlife.testandroidviarn.useRN.ActivityAndRN;
+
 public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -16,6 +18,7 @@ public class MainActivity extends AppCompatActivity {
     public void btnClick(View view) {
         switch (view.getId()) {
             case R.id.btn_activity_and_rn:
+                goActivity(new ActivityAndRN());
                 break;
             case R.id.btn_fragment_and_rn:
                 break;
