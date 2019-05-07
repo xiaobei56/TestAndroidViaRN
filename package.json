@@ -1,0 +1,17 @@
+{
+  "name": "testandroidviarn",
+  "version": "1.0.0",
+  "description": "test",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node node_modules/react-native/local-cli/cli.js start"
+  },
+  "author": "xiaobei",
+  "license": "ISC",
+  "dependencies": {
+    "core-js": "^3.0.1",
+    "react": "^16.8.6",
+    "react-native": "^0.59.5"
+  }
+}
