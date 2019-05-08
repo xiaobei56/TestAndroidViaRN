@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.view.View;
 
 import cn.gridlife.testandroidviarn.useRN.ActivityAndRN;
+import cn.gridlife.testandroidviarn.useRN.ActivityFragment;
+import cn.gridlife.testandroidviarn.useRN.ActivityRN;
 
 public class MainActivity extends AppCompatActivity {
     @Override
@@ -21,8 +23,10 @@ public class MainActivity extends AppCompatActivity {
                 goActivity(new ActivityAndRN());
                 break;
             case R.id.btn_fragment_and_rn:
+                goActivity(new ActivityFragment());
                 break;
             case R.id.btn_rn:
+                goActivity(new ActivityRN());
                 break;
             default:
                 break;

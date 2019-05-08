@@ -1,18 +1,6 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- */
-
 import React, {Component} from 'react';
-import {Platform, StyleSheet, Text, View, ToastAndroid, DeviceEventEmitter, Button} from 'react-native';
 
-const instructions = Platform.select({
-    ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
-    android:
-    'Double tap R on your keyboard to reload,\n' +
-    'Shake or press menu button for dev menu',
-});
+import {Platform, StyleSheet, Text, View, ToastAndroid, DeviceEventEmitter, Button,NativeModules} from 'react-native';
 
 export default class App extends Component<Props> {
 
@@ -20,32 +8,39 @@ export default class App extends Component<Props> {
     constructor(props) {
         super(props);
         this.state = {
-            info: "嘟嘟嘟嘟"
+            info: "这是要变的数据"
         }
     }
 
     componentWillMount() {
-    //注册接收器
-        this.testDataListener = DeviceEventEmitter.addListener('testData', e => {//for Android
-            ToastAndroid.show(e.data, 2000);
-            //更新状态及其他操作
-
+        this.rnFunctionListener = DeviceEventEmitter.addListener('rnFunction', e => {
+         this.setState({
+                        info: e.data
+                    })
         });
     }
-
-
     render() {
         return (
             <View style={styles.container}>
                 <Text style={styles.welcome}>{this.state.info}</Text>
-                <Text style={styles.instructions}>To get started, edit App.js</Text>
-                <Text style={styles.instructions}>{instructions}</Text>
-
+                <Button
+                    style={styles.welcome}
+                    title="调原生组件"
+                    onPress={() => this.btnClick()}
+                />
             </View>
         );
     }
 
+    btnClick() {
+        NativeModules.NativeCallRNModule.doLogin("张飞", "1111").then(result => {
+            this.setState({
+                info: "看弹窗，是原生的Toast组件"
+            })
+        })
 
+
+    }
 }
 
 const styles = StyleSheet.create({
